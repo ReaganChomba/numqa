@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "numqa"
+version = "1.0.0"
+description = "Differential Testing and Numerical Correctness Verification Framework"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "QA Engineer", email = "qa-lead@hpc.internal" }
+]
+license = { text = "Apache-2.0" }
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "hypothesis>=6.80.0",
+    "tabulate>=0.9.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0"
+]
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", ".github*"]
